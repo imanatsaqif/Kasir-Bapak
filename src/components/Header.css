@@ -1,0 +1,51 @@
+/* src/components/Header.css */
+.header-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    max-width: 60%;
+    padding: 0.35em;
+    column-gap: 1%;
+    margin-bottom: 1em;
+    height: 10vh;
+  }
+  
+  .nav-button {
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    font-size: 2em;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: #95E1D3; /* Warna default untuk halaman tidak aktif */
+    transition: background-color 0.3s ease;
+  }
+  
+  .nav-button.active {
+    background-color: #6DD6C2; /* Warna untuk halaman aktif */
+  }
+  
+  .nav-button:hover:not(.active) {
+    background-color: #84d1c2; /* Warna hover */
+  }
+  
+  .logo-button,
+  .logout-button {
+    display: flex;
+    background-color: #6DD6C2;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    font-size: 2em;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    align-items: center;
+  }
+  
+  .button-img {
+    height: 100%;
+    max-height: 0.85em;
+    width: auto;
+  }

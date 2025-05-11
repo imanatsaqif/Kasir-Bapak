@@ -1,0 +1,77 @@
+/* Layout Utama */
+.cashier-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  background-color: #e3f8f5;
+  font-family: Arial, sans-serif;
+  min-height: 100vh;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.cashier-main-content {
+  display: flex;
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 95%;
+  height: calc(100vh - 120px);
+  overflow: hidden;
+}
+
+/* Bagian Pencarian Produk */
+.product-search-section {
+  flex: 1;
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  min-width: 350px;
+  max-width: 35%;
+  overflow-y: auto;
+}
+
+/* Bagian Transaksi */
+.transaction-section {
+  flex: 1;
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  min-width: 600px;
+  max-width: 65%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .cashier-main-content {
+    flex-direction: column;
+    height: auto;
+    max-height: none;
+  }
+  
+  .product-search-section,
+  .transaction-section {
+    max-width: 100%;
+    min-width: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .cashier-page {
+    padding: 0.5rem;
+  }
+  
+  .cashier-main-content {
+    gap: 1rem;
+  }
+  
+  .product-search-section,
+  .transaction-section {
+    padding: 1rem;
+  }
+}

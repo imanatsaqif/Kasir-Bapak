@@ -1,0 +1,380 @@
+/* Layout Utama */
+.inventory-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  background-color: #e3f8f5;
+  font-family: Arial, sans-serif;
+  min-height: 100vh;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.inventory-main-content {
+  display: flex;
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 95%;
+  height: calc(100vh - 120px);
+  overflow: hidden;
+}
+
+/* Form Section */
+.inventory-form-section {
+  flex: 1;
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  min-width: 350px;
+  max-width: 35%;
+  overflow-y: auto;
+  transition: all 0.3s ease;
+}
+
+.inventory-form-section.hidden {
+  transform: translateX(-100%);
+  opacity: 0;
+  flex: 0;
+  padding: 0;
+  margin: 0;
+  min-width: 0;
+  max-width: 0;
+  overflow: hidden;
+}
+
+.inventory-page-title {
+  font-size: 1.8rem;
+  color: #333;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-weight: 600;
+}
+
+.product-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  padding: 0.5rem;
+}
+
+.form-title {
+  font-size: 1.4rem;
+  color: #444;
+  margin-bottom: 1rem;
+  font-weight: 500;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 0.5rem;
+}
+
+.form-input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-label {
+  font-weight: bold;
+  color: #555;
+  font-size: 0.95rem;
+}
+
+.form-input, .form-textarea {
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.form-input:focus, .form-textarea:focus {
+  outline: none;
+  border-color: #6DD6C2;
+  box-shadow: 0 0 0 2px rgba(109, 214, 194, 0.2);
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.form-submit-btn {
+  background-color: #95E1D3;
+  color: white;
+  border: none;
+  padding: 0.8rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-top: 0.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  font-weight: 500;
+}
+
+.form-submit-btn:hover {
+  background-color: #84d1c2;
+}
+
+.form-submit-btn:active {
+  transform: scale(0.98);
+}
+
+/* Table Section */
+.inventory-table-section {
+  flex: 1;
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  min-width: 600px;
+  max-width: 65%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.inventory-table-section.full-width {
+  max-width: 100%;
+  flex: 1 0 100%;
+}
+
+.table-header-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.2rem;
+  padding: 0 0.5rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.table-section-title {
+  font-size: 1.4rem;
+  color: #444;
+  font-weight: 500;
+  margin: 0;
+}
+
+.table-controls-group {
+  display: flex;
+  gap: 0.8rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.search-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.search-input {
+  padding: 0.5rem 2rem 0.5rem 0.8rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  width: 200px;
+  transition: border-color 0.3s;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: #6DD6C2;
+}
+
+.search-icon {
+  position: absolute;
+  right: 0.8rem;
+  color: #777;
+  pointer-events: none;
+}
+
+.table-control-btn {
+  padding: 0.6rem 1rem;
+  border: none;
+  border-radius: 4px;
+  background-color: #6DD6C2;
+  color: white;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.2s;
+  white-space: nowrap;
+}
+
+.table-control-btn:hover {
+  background-color: #5dc5b1;
+}
+
+.toggle-form-btn {
+  background-color: #f8a978;
+}
+
+.toggle-form-btn:hover {
+  background-color: #e69867;
+}
+
+.table-scroll-container {
+  overflow-y: auto;
+  flex-grow: 1;
+  border: 1px solid #eee;
+  border-radius: 6px;
+}
+
+.product-data-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.product-data-table th, 
+.product-data-table td {
+  padding: 0.8rem 1rem;
+  text-align: left;
+}
+
+.table-header-cell {
+  background-color: #6DD6C2;
+  color: white;
+  font-weight: 500;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.sortable {
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.sortable:hover {
+  background-color: #5dc5b1;
+}
+
+.product-data-row:hover {
+  background-color: #f9f9f9;
+}
+
+.product-data-cell {
+  border-bottom: 1px solid #eee;
+  vertical-align: middle;
+}
+
+.product-description {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 200px;
+}
+
+.stock-edit-input {
+  width: 70px;
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  text-align: center;
+  transition: border-color 0.3s ease;
+}
+
+.stock-edit-input:focus {
+  outline: none;
+  border-color: #6DD6C2;
+}
+
+.product-delete-btn {
+  background-color: #ff6b6b;
+  color: white;
+  border: none;
+  padding: 0.5rem 0.8rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.product-delete-btn:hover {
+  background-color: #e55a5a;
+}
+
+.product-delete-btn:active {
+  transform: scale(0.95);
+}
+
+.product-edit-btn {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 0.5rem 0.8rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin-right: 0.5rem;
+}
+
+.product-edit-btn:hover {
+  background-color: #3e8e41;
+}
+
+.product-edit-btn:active {
+  transform: scale(0.95);
+}
+
+.input-product-btn {
+  background-color: #6DD6C2 !important;
+}
+
+.input-product-btn:hover {
+  background-color: #5dc5b1 !important;
+}
+
+.reset-sorting-btn {
+  background-color: #f8a978 !important;
+}
+
+.reset-sorting-btn:hover {
+  background-color: #e69867 !important;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .inventory-main-content {
+    flex-direction: column;
+    height: auto;
+    max-height: none;
+  }
+  
+  .inventory-form-section,
+  .inventory-table-section {
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  .inventory-form-section.hidden {
+    transform: translateY(-100%);
+  }
+}
+
+@media (max-width: 768px) {
+  .table-header-controls {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .table-controls-group {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .search-input {
+    width: 100%;
+  }
+
+  .product-data-table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+}

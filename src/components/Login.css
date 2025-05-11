@@ -1,0 +1,63 @@
+/* Login.css */
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap');
+
+/* Reset margin dan padding untuk seluruh elemen */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Styling untuk container login */
+.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh; /* Menutupi seluruh tinggi layar */
+  width: 100vw; /* Menutupi seluruh lebar layar */
+  background-color: #6dd6c2; /* Warna background hijau */
+  font-family: 'DM Serif Display', serif;
+  overflow: hidden; /* Menghilangkan scroll */
+}
+
+/* Styling untuk container logo dan judul */
+.logo-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+/* Styling untuk logo */
+.logo {
+  filter: invert(100%) brightness(200%);
+  width: 50px; /* Sesuaikan ukuran logo */
+  height: auto;
+  margin-right: 27.46px; /* Jarak antara logo dan tulisan "Kasir" */
+}
+
+/* Styling untuk judul */
+.login-title {
+  display: flex;
+  align-items: center;
+  color: white;
+  font-size: 3rem;
+  letter-spacing: 0.5rem;
+}
+
+/* Styling untuk teks "Kasir" */
+.kasir-text {
+  margin-right: 20px; /* Jarak antara "Kasir" dan "Bapak" */
+}
+
+/* Styling untuk tombol Google */
+.google-button {
+  width: 200px; /* Sesuaikan ukuran tombol */
+  height: auto;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.google-button:hover {
+  transform: scale(1.05); /* Efek hover */
+}
