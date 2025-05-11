@@ -51,6 +51,20 @@ Pastikan Anda sudah menginstal Node.js dan npm di sistem Anda. Tidak ada konfigu
 
 Proyek ini berada dalam tahap *early MVP*. Aplikasi sudah cukup fungsional dengan antarmuka yang sederhana namun layak digunakan. Fitur utama kasir dan pencatatan inventory telah berjalan sesuai kebutuhan awal.
 
+## To Do List
+
+1. **Tambahkan layer keamanan tambahan**  
+   Saat ini belum ada aturan keamanan yang diterapkan pada Firestore. Perlu dibuat aturan akses untuk memastikan hanya pengguna yang berwenang yang dapat mengubah data penting di database.
+
+2. **Menambah manajemen user dan admin control**  
+   Fitur manajemen pengguna dan kontrol admin perlu ditambahkan. Saat ini, siapapun yang mendaftar dapat langsung mengakses inventory dan kasir, serta memanipulasi data secara bebas. Pembagian hak akses antara user biasa dan admin akan meningkatkan keamanan dan kontrol.
+
+3. **Menangani kasus stok negatif**  
+   Perlu dilakukan pengecekan untuk mencegah transaksi yang menyebabkan stok barang menjadi negatif. Contohnya, ketika stok barang 30 tetapi dibeli dengan kuantitas 40, aplikasi harus menangani kasus ini dengan tepat dan memberikan peringatan atau pembatasan transaksi.
+
+4. **Menangani input panjang di form**  
+   Aplikasi perlu menangani kasus ketika input di form terlalu panjang, seperti nama atau keterangan yang melebihi panjang yang diizinkan. Validasi input ini akan memastikan data yang dimasukkan tetap terstruktur dan tidak menyebabkan gangguan pada tampilan atau penyimpanan data.
+
 ## Kontributor
 
 Imana Tsaqif Ariyadi  
