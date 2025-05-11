@@ -3,6 +3,8 @@ import { db, auth } from "../firebase/firebaseconfig";
 import { collection, addDoc, doc, updateDoc, deleteDoc, onSnapshot } from "firebase/firestore";
 import { useNavigate } from "react-router-dom";
 import Header from "../components/Header";
+import ProductDetailModal from "../components/ProductDetailModal";
+import { formatDate } from "../components/ProductDetailModal";
 import "./Inventory.css";
 
 interface Produk {
@@ -32,6 +34,7 @@ const Inventory = () => {
   const [showFormSection, setShowFormSection] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const [editingId, setEditingId] = useState<string | null>(null);
+  const [selectedProduct, setSelectedProduct] = useState<Produk | null>(null);
 
   useEffect(() => {
     const unsubscribeAuth = auth.onAuthStateChanged((user) => {
@@ -164,6 +167,10 @@ const Inventory = () => {
     setProdukList(sortedDefault);
     setSortField(null);
     setSortDirection("asc");
+  };
+
+  const handleProductClick = (produk: Produk) => {
+    setSelectedProduct(produk);
   };
 
   return (
@@ -308,19 +315,19 @@ const Inventory = () => {
                   </th>
                   <th className="table-header-cell">Keterangan</th>
                   <th
-                    className="table-header-cell sortable"
+                    className="table-header-cell sortable kadaluarsa-cell"
                     onClick={() => handleSort("kadaluarsa")}
                   >
                     Kadaluarsa {sortField === "kadaluarsa" ? (sortDirection === "asc" ? "↑" : "↓") : ""}
                   </th>
                   <th
-                    className="table-header-cell sortable"
+                    className="table-header-cell sortable harga-cell"
                     onClick={() => handleSort("harga")}
                   >
                     Harga {sortField === "harga" ? (sortDirection === "asc" ? "↑" : "↓") : ""}
                   </th>
                   <th
-                    className="table-header-cell sortable"
+                    className="table-header-cell sortable stock-cell"
                     onClick={() => handleSort("stok")}
                   >
                     Stok {sortField === "stok" ? (sortDirection === "asc" ? "↑" : "↓") : ""}
@@ -331,12 +338,19 @@ const Inventory = () => {
               <tbody>
                 {produkList.map((produk) => (
                   <tr key={produk.id} className="product-data-row">
-                    <td className="product-data-cell">{produk.namaProduk}</td>
+                    <td 
+                      className="product-data-cell clickable"
+                      onClick={() => handleProductClick(produk)}
+                    >
+                      {produk.namaProduk}
+                    </td>
                     <td className="product-data-cell">{produk.jenisProduk}</td>
                     <td className="product-data-cell product-description">
                       {produk.keterangan || '-'}
                     </td>
-                    <td className="product-data-cell">{produk.kadaluarsa}</td>
+                    <td className="product-data-cell kadaluarsa-cell">
+                      {formatDate(produk.kadaluarsa)}
+                    </td>
                     <td className="product-data-cell">Rp{produk.harga.toLocaleString()}</td>
                     <td className="product-data-cell">
                       <input
@@ -368,6 +382,13 @@ const Inventory = () => {
           </div>
         </div>
       </div>
+
+      {selectedProduct && (
+        <ProductDetailModal 
+          product={selectedProduct} 
+          onClose={() => setSelectedProduct(null)} 
+        />
+      )}
     </div>
   );
 };
