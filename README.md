@@ -65,6 +65,8 @@ Proyek ini berada dalam tahap *early MVP*. Aplikasi sudah cukup fungsional denga
 4. **Menangani input panjang di form**  
    Aplikasi perlu menangani kasus ketika input di form terlalu panjang, seperti nama atau keterangan yang melebihi panjang yang diizinkan. Validasi input ini akan memastikan data yang dimasukkan tetap terstruktur dan tidak menyebabkan gangguan pada tampilan atau penyimpanan data.
 
+5. **Develop Mobile Responsivitas**
+   
 ## Kontributor
 
 Imana Tsaqif Ariyadi  
