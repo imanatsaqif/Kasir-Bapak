@@ -28,7 +28,7 @@
   border-radius: 0.75rem;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   min-width: 350px;
-  max-width: 35%;
+  max-width: 30%;
   overflow-y: auto;
   transition: all 0.3s ease;
 }
@@ -338,6 +338,30 @@
   background-color: #e69867 !important;
 }
 
+/* Add these to your existing Inventory.css */
+
+/* Product Detail Modal styles */
+.clickable {
+  cursor: pointer;
+  color: #2a7f7f;
+  text-decoration: underline;
+}
+
+.clickable:hover {
+  color: #1a5f5f;
+}
+
+/* Fixed width for stock and price column */
+.stock-cell {
+  width: 100px;
+  min-width: 100px;
+}
+
+.harga-cell {
+  width: 120px;
+  min-width: 120px;
+}
+
 /* Responsive Design */
 @media (max-width: 1200px) {
   .inventory-main-content {
@@ -376,5 +400,13 @@
     display: block;
     overflow-x: auto;
     white-space: nowrap;
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .stock-cell {
+    width: 100px;
+    min-width: 100px;
   }
 }
