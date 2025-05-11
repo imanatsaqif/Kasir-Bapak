@@ -30,7 +30,6 @@
 
 /* Styling untuk logo */
 .logo {
-  filter: invert(100%) brightness(200%);
   width: 50px; /* Sesuaikan ukuran logo */
   height: auto;
   margin-right: 27.46px; /* Jarak antara logo dan tulisan "Kasir" */
