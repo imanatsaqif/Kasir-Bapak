@@ -2,6 +2,11 @@
 
 Website Kasir dan Manajemen Inventory yang dibuat berdasarkan permintaan pribadi dari ayah saya. Proyek ini dikembangkan untuk memenuhi kebutuhan sederhana pencatatan transaksi dan inventaris, sekaligus menjadi bagian dari portofolio pribadi sebagai web developer.
 
+## Coba Aplikasi
+
+Akses aplikasi secara langsung di:  
+[https://kasir-bapak.web.app/](https://kasir-bapak.web.app/)
+
 ## Fitur
 
 - Pencatatan transaksi
